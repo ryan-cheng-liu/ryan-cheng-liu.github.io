@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <title>Rotated Around An Arbitrary Axis</title>
+  <script type="text/javascript" src="./js/gl-matrix-min.js"></script>
+  <script id="shader-fs" type="x-shader/x-fragment">
+  // fragment shader 片段著色器(像素著色器)
+  precision mediump float;
+  varying vec4 vColor;
+  void main(void) {
+    gl_FragColor = vColor;
+  }
+  </script>
+  <script id="shader-vs" type="x-shader/x-vertex">
+  // vertex shader 頂點著色器
+  attribute vec3 aVertexPosition;
+  attribute vec4 aVertexColor;
+  uniform mat4 uMVPMatrix;
+  varying vec4 vColor;
+  void main(void) {
+    gl_Position = uMVPMatrix * vec4(aVertexPosition, 1.0);
+    vColor = aVertexColor;
+  }
+  </script>
+  <script src="./js/index.js"></script>
+  <body onload="main();">
+    <canvas id="mainCanvas" width=800 height=600></canvas><br>
+    速度:
+    <input type="number" name="speed">
+    <br>
+    方塊座標: 
+    <input type="number" name="cubePositionX">
+    <input type="number" name="cubePositionY">
+    <input type="number" name="cubePositionZ">
+    <br>
+    點1: 
+    <input type="number" name="vertex1PositionX">
+    <input type="number" name="vertex1PositionY">
+    <input type="number" name="vertex1PositionZ">
+    <br>
+    點2: 
+    <input type="number" name="vertex2PositionX">
+    <input type="number" name="vertex2PositionY">
+    <input type="number" name="vertex2PositionZ">
+    <br>
+  </body>
+</html>

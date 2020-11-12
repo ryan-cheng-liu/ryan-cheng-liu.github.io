@@ -1,0 +1,84 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+#game {
+    display: flex;
+    height: 400px;
+    width: 600px;
+    background-color: red;
+}
+
+#game > .left-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: black;
+}
+#game > .right-area {
+    width: 200px;
+    background-color: lightblue;
+}
+
+#game .tictactoe-table {
+    position: relative;
+    width: 360px;
+    height: 360px;
+    background-color: white;
+}
+
+#game .click-detect-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#game .click-detect-block.clickable {
+    background-color: rgba(0, 255, 0, 0.1);
+    cursor: pointer;
+}
+
+#game .click-detect-block[data-x="0"] {
+    left: 0;
+}
+#game .click-detect-block[data-x="1"] {
+    left: 120px;
+}
+#game .click-detect-block[data-x="2"] {
+    left: 240px;
+}
+#game .click-detect-block[data-y="0"] {
+    top: 0;
+}
+#game .click-detect-block[data-y="1"] {
+    top: 120px;
+}
+#game .click-detect-block[data-y="2"] {
+    top: 240px;
+}
+
+#game .click-detect-block {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+}
+
+#game .turn-display-area {
+    height: 80px;
+    padding: 10px;
+}
+
+#game .turn-display {
+    height: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 3px black;
+}
